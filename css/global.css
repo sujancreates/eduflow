@@ -1,0 +1,47 @@
+:root {
+    --bg: #0f172a;
+    --sidebar: #1e293b;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --border: #334155;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode {
+    --bg: #f8fafc;
+    --sidebar: #ffffff;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #0284c7;
+    --border: #cbd5e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: var(--bg);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
