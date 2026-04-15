@@ -1,15 +1,16 @@
 :root {
-    --bg: #0f172a;
-    --sidebar: #1e293b;
-    --card: #1e293b;
+    --bg: #0b1120;
+    --sidebar: #111827;
+    --card: #172132;
     --text: #e2e8f0;
     --muted: #94a3b8;
     --accent: #38bdf8;
-    --border: #334155;
+    --accent-light: #67e8f9;
+    --border: #243041;
     --success: #22c55e;
     --warning: #f59e0b;
     --danger: #ef4444;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 body.light-mode {
@@ -19,7 +20,12 @@ body.light-mode {
     --text: #0f172a;
     --muted: #475569;
     --accent: #0284c7;
-    --border: #cbd5e1;
+    --accent-light: #38bdf8;
+    --border: #dbe4ee;
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -28,13 +34,14 @@ body.light-mode {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     background: var(--bg);
 }
 
 body {
-    font-family: "Poppins", sans-serif;
     color: var(--text);
+    font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -42,6 +49,9 @@ a {
     color: inherit;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
     font: inherit;
 }

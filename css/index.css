@@ -35,9 +35,9 @@
     align-items: center;
     gap: 12px;
     padding: 12px 14px;
-    border-radius: 12px;
+    border-radius: 14px;
     color: var(--muted);
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     font-weight: 500;
 }
 
@@ -48,13 +48,14 @@
 
 .menu a:hover,
 .menu a.active {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
     color: white;
 }
 
 .main-content {
     flex: 1;
     padding: 30px;
+    position: relative;
 }
 
 .topbar {
@@ -63,6 +64,7 @@
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .topbar-left {
@@ -91,30 +93,69 @@
 }
 
 .menu-toggle,
-#theme-toggle {
+.settings-toggle {
     width: 48px;
     height: 48px;
     min-width: 48px;
     border: none;
-    border-radius: 12px;
-    background: var(--accent);
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    box-shadow: var(--shadow);
 }
 
 .menu-toggle {
     display: none;
 }
 
-#theme-toggle:hover,
+.settings-toggle:hover,
 .menu-toggle:hover {
     transform: translateY(-2px);
     opacity: 0.95;
+}
+
+.settings-card {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    width: 220px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    display: none;
+    z-index: 1005;
+}
+
+.settings-card.active {
+    display: block;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--text);
+}
+
+.settings-item i {
+    width: 18px;
+    text-align: center;
+}
+
+.settings-item:hover {
+    background: var(--accent);
+    color: white;
 }
 
 .cards {
@@ -125,41 +166,53 @@
 }
 
 .card {
-    background: var(--card);
+    background: rgba(23, 33, 50, 0.88);
     border: 1px solid var(--border);
-    border-radius: 18px;
+    border-radius: 20px;
     padding: 22px;
     display: flex;
     align-items: center;
     gap: 16px;
     box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+body.light-mode .card {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
 }
 
 .card-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 14px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: white;
+    flex-shrink: 0;
 }
 
 .card-icon.blue {
-    background: var(--accent);
-}
-
-.card-icon.green {
-    background: var(--success);
+    background: linear-gradient(135deg, #38bdf8, #67e8f9);
 }
 
 .card-icon.orange {
-    background: var(--warning);
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.card-icon.green {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
 }
 
 .card-icon.red {
-    background: var(--danger);
+    background: linear-gradient(135deg, #ef4444, #f87171);
 }
 
 .card-info h3 {
@@ -173,6 +226,13 @@
     font-size: 1.9rem;
     font-weight: 700;
     color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.card-info small {
+    color: var(--muted);
+    font-size: 0.82rem;
 }
 
 .content-grid,
@@ -184,12 +244,12 @@
 }
 
 .panel {
-    background: rgba(30, 41, 59, 0.85);
+    background: rgba(23, 33, 50, 0.88);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 22px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
 }
 
 body.light-mode .panel {
@@ -274,13 +334,13 @@ body.light-mode .panel {
 .action-btn {
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 16px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .action-btn:hover {
@@ -370,5 +430,10 @@ body.light-mode .panel {
     .list li {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .settings-card {
+        right: 0;
+        width: 200px;
     }
 }

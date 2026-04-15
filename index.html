@@ -10,13 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
@@ -24,47 +27,18 @@
             </div>
 
             <ul class="menu">
-                <li>
-                    <a href="index.html" class="active">
-                        <i class="fas fa-chart-line"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="schedule.html">
-                        <i class="fas fa-calendar-alt"></i>
-                        Schedule
-                    </a>
-                </li>
-                <li>
-                    <a href="tasks.html">
-                        <i class="fas fa-tasks"></i>
-                        Tasks
-                    </a>
-                </li>
-                <li>
-                    <a href="announcements.html">
-                        <i class="fas fa-bullhorn"></i>
-                        Announcements
-                    </a>
-                </li>
-                <li>
-                    <a href="queries.html">
-                        <i class="fas fa-question-circle"></i>
-                        Queries
-                    </a>
-                </li>
-                <li>
-                    <a href="resources.html">
-                        <i class="fas fa-folder-open"></i>
-                        Resources
-                    </a>
-                </li>
+                <li><a href="index.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                <li><a href="tasks.html"><i class="fas fa-tasks"></i> Add Tasks</a></li>
+                <li><a href="announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                <li><a href="queries.html"><i class="fas fa-question-circle"></i> Queries</a></li>
+                <li><a href="resources.html"><i class="fas fa-folder-open"></i> Resources</a></li>
             </ul>
         </aside>
 
         <div class="overlay" id="overlay"></div>
 
+        <!-- Main -->
         <main class="main-content">
             <header class="topbar">
                 <div class="topbar-left">
@@ -74,15 +48,38 @@
 
                     <div class="topbar-text">
                         <h1>Dashboard</h1>
-                        <p>Welcome back. Here’s your academic overview for today.</p>
+                        <p>Academic overview for today</p>
                     </div>
                 </div>
 
-                <button id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
+                <button id="settings-toggle" class="settings-toggle" aria-label="Open settings">
+                    <i class="fas fa-cog"></i>
                 </button>
+
+                <div id="settings-card" class="settings-card">
+                    <div class="settings-item">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </div>
+
+                    <div class="settings-item" id="theme-switch">
+                        <i class="fas fa-moon"></i>
+                        <span>Theme</span>
+                    </div>
+
+                    <div class="settings-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </div>
+
+                    <div class="settings-item">
+                        <i class="fas fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </div>
+                </div>
             </header>
 
+            <!-- Stats Cards -->
             <section class="cards">
                 <div class="card">
                     <div class="card-icon blue">
@@ -90,41 +87,46 @@
                     </div>
                     <div class="card-info">
                         <h3>Total Tasks</h3>
-                        <p>12</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon green">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <div class="card-info">
-                        <h3>Upcoming Classes</h3>
-                        <p>4</p>
+                        <p id="total-tasks">0</p>
+                        <small>All saved tasks</small>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-icon orange">
-                        <i class="fas fa-envelope-open-text"></i>
+                        <i class="fas fa-hourglass-half"></i>
                     </div>
                     <div class="card-info">
-                        <h3>Pending Queries</h3>
-                        <p>8</p>
+                        <h3>Pending Tasks</h3>
+                        <p id="pending-tasks">0</p>
+                        <small>Still to complete</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon green">
+                        <i class="fas fa-circle-check"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Completed Tasks</h3>
+                        <p id="completed-tasks">0</p>
+                        <small>Finished work</small>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-icon red">
-                        <i class="fas fa-bullhorn"></i>
+                        <i class="fas fa-calendar-day"></i>
                     </div>
                     <div class="card-info">
-                        <h3>Announcements</h3>
-                        <p>5</p>
+                        <h3>Deadlines</h3>
+                        <p id="deadline-tasks">0</p>
+                        <small>Upcoming dates</small>
                     </div>
                 </div>
             </section>
 
+            <!-- Middle Grid -->
             <section class="content-grid">
                 <div class="panel">
                     <div class="panel-header">
@@ -137,22 +139,61 @@
 
                 <div class="panel">
                     <div class="panel-header">
-                        <h2>Latest Announcements</h2>
-                        <a href="announcements.html" class="panel-link">View all</a>
-                    </div>
-
-                    <ul class="list"></ul>
-                </div>
-            </section>
-
-            <section class="bottom-grid">
-                <div class="panel">
-                    <div class="panel-header">
                         <h2>Upcoming Schedule</h2>
                         <a href="schedule.html" class="panel-link">Manage</a>
                     </div>
 
-                    <ul class="list"></ul>
+                    <ul class="list">
+                        <li>
+                            <div>
+                                <strong>Ulster University</strong>
+                                <p>COM109 • 10:00 AM • Thursday</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Ravensbourne</strong>
+                                <p>Design Systems • 1:00 PM • Friday</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>UEL</strong>
+                                <p>Web Development • 9:00 AM • Monday</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Bottom Grid -->
+            <section class="bottom-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Latest Announcements</h2>
+                        <a href="announcements.html" class="panel-link">View all</a>
+                    </div>
+
+                    <ul class="list">
+                        <li>
+                            <div>
+                                <strong>CW2 deadline reminder posted</strong>
+                                <p>Client-side Development • Today</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Lecture room updated</strong>
+                                <p>Interactive Media • Yesterday</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Week 4 resources uploaded</strong>
+                                <p>Web Systems • 2 days ago</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="panel">
