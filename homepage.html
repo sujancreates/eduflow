@@ -16,6 +16,45 @@
 </head>
 
 <body>
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-top">
+            <i class="fas fa-cookie-bite"></i>
+            <h4>Cookies</h4>
+        </div>
+
+        <p>
+            We use cookies to improve your experience.
+        </p>
+
+        <div class="cookie-actions">
+            <button id="acceptCookies" class="accept-btn">Accept</button>
+            <button id="rejectCookies" class="reject-btn">Reject</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const banner = document.getElementById("cookieBanner");
+            const accept = document.getElementById("acceptCookies");
+            const reject = document.getElementById("rejectCookies");
+
+            const consent = localStorage.getItem("cookie-consent");
+
+            if (!consent) {
+                banner.classList.add("show");
+            }
+
+            accept.onclick = () => {
+                localStorage.setItem("cookie-consent", "accepted");
+                banner.classList.remove("show");
+            };
+
+            reject.onclick = () => {
+                localStorage.setItem("cookie-consent", "rejected");
+                banner.classList.remove("show");
+            };
+        });
+    </script>
     <section class="hero">
         <div class="bg-grid"></div>
         <div class="glow glow-1"></div>
@@ -76,6 +115,7 @@
         </div>
 
     </section>
+    <!-- <script src="js/homepage.js"></script> -->
 </body>
 
 </html>
