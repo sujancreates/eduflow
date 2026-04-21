@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/schedule.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="schedule-hero">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div>
+                <p class="hero-label">Academic Schedule</p>
+                <h1>Plan classes, meetings, and deadlines clearly</h1>
+                <p class="hero-text">   
+                    Keep your teaching schedule organised with upcoming events, weekly planning, and deadline tracking
+                    in one place.
+                </p>
+            </div>
+
+            <button class="btn-primary" id="openScheduleModalBtn" type="button">
+                <i class="fas fa-plus-circle"></i>
+                Add Schedule Item
+            </button>
+        </section>
+
+        <section class="schedule-toolbar">
+            <div class="toolbar-left">
+                <button class="filter-btn active" id="filterAllBtn" type="button">All</button>
+                <button class="filter-btn" id="filterTodayBtn" type="button">Today</button>
+                <button class="filter-btn" id="filterWeekBtn" type="button">This Week</button>
+                <button class="filter-btn" id="filterUpcomingBtn" type="button">Upcoming</button>
+            </div>
+
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="scheduleSearchInput" placeholder="Search schedule...">
+            </div>
+        </section>
+
+        <section class="schedule-grid">
+            <div class="panel panel-calendar">
+                <div class="panel-top">
+                    <h2><i class="fas fa-calendar-alt"></i> Current Month</h2>
+                    <span id="currentMonthLabel"></span>
+                </div>
+                <div class="calendar-card">
+                    <div class="calendar-days">
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                    </div>
+                    <div class="calendar-dates" id="calendarDates"></div>
+                </div>
+            </div>
+
+            <div class="panel panel-summary">
+                <div class="panel-top">
+                    <h2><i class="fas fa-clock"></i> Summary</h2>
+                </div>
+
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h4>Today</h4>
+                        <p id="todayCount">0</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>This Week</h4>
+                        <p id="weekCount">0</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>Upcoming</h4>
+                        <p id="upcomingCount">0</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>Total</h4>
+                        <p id="totalCount">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule-panel panel">
+            <div class="panel-top">
+                <h2><i class="fas fa-list-check"></i> Schedule Items</h2>
+                <span id="scheduleCount">0 items</span>
+            </div>
+
+            <div class="schedule-list" id="scheduleList"></div>
+        </section>
+    </main>
+
+    <div id="scheduleModal" class="modal">
+        <div class="modal-card">
+            <div class="modal-top">
+                <h3 id="modalTitle">Add Schedule Item</h3>
+                <button type="button" class="icon-btn" id="closeModalBtn" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="scheduleForm" class="modal-form">
+                <input type="hidden" id="editId">
+
+                <label for="scheduleTitle">Title *</label>
+                <input type="text" id="scheduleTitle" required>
+
+                <label for="scheduleType">Type</label>
+                <select id="scheduleType">
+                    <option value="Lecture">Lecture</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Deadline">Deadline</option>
+                    <option value="Reminder">Reminder</option>
+                </select>
+
+                <label for="scheduleDate">Date *</label>
+                <input type="date" id="scheduleDate" required>
+
+                <label for="scheduleTime">Time</label>
+                <input type="time" id="scheduleTime">
+
+                <label for="scheduleNote">Note</label>
+                <textarea id="scheduleNote" rows="4" placeholder="Add short details..."></textarea>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelModalBtn" class="btn-outline-sm">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/schedule.js"></script>
+</body>
+
+</html>

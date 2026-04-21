@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/notification.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="announcements-hero">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <div class="hero-content">
+                <p class="hero-label">Notification Center</p>
+                <h1>Announcements & missed task alerts</h1>
+                <p class="hero-text">
+                    Stay updated with important task-related notifications, missed deadlines, and academic reminders.
+                </p>
+            </div>
+
+            <div class="hero-actions">
+                <button class="btn-secondary" id="markAllReadBtn" type="button">
+                    <i class="fas fa-check-double"></i>
+                    Mark all as read
+                </button>
+
+                <button class="btn-danger" id="clearAllBtn" type="button">
+                    <i class="fas fa-trash"></i>
+                    Clear all
+                </button>
+            </div>
+        </section>
+
+        <section class="announcement-toolbar">
+            <div class="toolbar-left">
+                <button class="filter-btn active" id="filterAllBtn" type="button">All</button>
+                <button class="filter-btn" id="filterUnreadBtn" type="button">Unread</button>
+                <button class="filter-btn" id="filterReadBtn" type="button">Read</button>
+            </div>
+
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="announcementSearchInput" placeholder="Search announcements...">
+            </div>
+        </section>
+
+        <section class="announcements-panel">
+            <div class="panel-top">
+                <h2>All Notifications</h2>
+                <span id="announcementCount">0 notifications</span>
+            </div>
+
+            <div id="announcementList" class="announcement-list"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <span>© 2026 EduFlow — Lecturer Workload Dashboard</span>
+    </footer>
+
+    <script src="js/notification.js"></script>
+</body>
+
+</html>
