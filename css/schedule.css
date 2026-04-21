@@ -172,6 +172,17 @@ body.light-mode .schedule-hero {
     transform: translateY(-2px);
 }
 
+.schedule-hero .btn-primary {
+    min-width: 220px;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.schedule-hero .btn-primary i {
+    flex-shrink: 0;
+}
+
 .schedule-toolbar {
     margin-top: 22px;
     display: flex;
