@@ -3,8 +3,6 @@ This is our cw2 repository for clientside development module.
 
 Lecturer workload management dashboard for multi-university teaching environments
 
-EduAssist is a web-based lecturer assistance dashboard designed to support academic staff managing workloads across multiple institutions. The system allows users to create, track, and prioritise tasks efficiently, with features such as persistent storage, dynamic UI rendering, and responsive design.
 
-The interface follows modern SaaS design principles, focusing on usability, clarity, and accessibility. A modular component structure was implemented using JavaScript, enabling scalable and maintainable code.
-
-The system addresses real-world challenges faced by lecturers, including task overload, deadline management, and multi-role coordination.
+EduFlow is a web-based dashboard designed to help lecturers manage their academic workload effectively. In university environments, lecturers often handle multiple responsibilities, sometimes even across different institutions, while managing several modules at the same time. From our perspective, balancing all these tasks can quickly become overwhelming and difficult to organise.
+The challenge motivated the development of EduFlow. The aim was to create a simple and practical solution that allows lectures to organise their tasks, priorities their work, and manage their time more efficiently. Rather than building a complex system, the focus was on creating a clean, intuitive interface that addresses real-world problem.
