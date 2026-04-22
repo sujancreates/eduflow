@@ -136,7 +136,7 @@ if (signupForm) {
 
         localStorage.setItem("eduflowLoggedIn", "false");
 
-        alert("Account created successfully! Please login.");
+        // alert("Account created successfully! Please login.");
         window.location.href = "login.html";
     });
 }
@@ -205,7 +205,7 @@ if (loginForm) {
         localStorage.setItem("eduflowCurrentUser", matchedUser.name);
         localStorage.setItem("eduflowCurrentUserEmail", matchedUser.email);
 
-        alert("Login successful!");
+        // alert("Login successful!");
         window.location.href = "dashboard.html";
     });
 }
