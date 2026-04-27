@@ -203,14 +203,9 @@ body {
     position: relative;
     z-index: 3;
     width: 500px;
-    /* background: rgba(10, 18, 35, 0.6);
-    border: 1px solid rgba(56, 189, 248, 0.08); */
     border-radius: 28px;
     padding: 2.75rem 2.25rem;
     text-align: center;
-    /* -webkit-backdrop-filter: blur(20px); */
-    /* backdrop-filter: blur(20px); */
-    /* box-shadow: 0 24px 60px rgba(0, 0, 0, 0.30); */
     animation: floatCenter 4.5s ease-in-out infinite;
     will-change: transform;
 }

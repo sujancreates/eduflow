@@ -7,7 +7,10 @@ const loginPassword = document.getElementById("login-password");
 const toggleSignupPassword = document.getElementById("toggleSignupPassword");
 const signupPassword = document.getElementById("password");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> remove-setting/profile
 /*    HELPERS */
 function showError(input, message) {
     const inputGroup = input.closest(".input-group");
