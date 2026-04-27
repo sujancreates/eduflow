@@ -219,7 +219,7 @@ function logoutUser() {
     localStorage.setItem("eduflowLoggedIn", "false");
     localStorage.removeItem("eduflowCurrentUser");
     localStorage.removeItem("eduflowCurrentUserEmail");
-    window.location.href = "homepage.html";
+    window.location.href = "index.html";
 }
 
 function setActiveFilterButton(activeButton) {

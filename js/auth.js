@@ -7,9 +7,7 @@ const loginPassword = document.getElementById("login-password");
 const toggleSignupPassword = document.getElementById("toggleSignupPassword");
 const signupPassword = document.getElementById("password");
 
-/* =========================
-   HELPERS
-========================= */
+/*    HELPERS */
 function showError(input, message) {
     const inputGroup = input.closest(".input-group");
     const inputWrap = inputGroup.querySelector(".input-wrap");
@@ -70,9 +68,7 @@ function migrateOldSingleUser() {
 
 migrateOldSingleUser();
 
-/* =========================
-   SIGNUP
-========================= */
+/*    SIGNUP */
 if (signupForm) {
     signupForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -139,14 +135,12 @@ if (signupForm) {
 
         localStorage.setItem("eduflowLoggedIn", "false");
 
-        alert("Account created successfully! Please login.");
+        // alert("Account created successfully! Please login.");
         window.location.href = "login.html";
     });
 }
 
-/* =========================
-   LOGIN
-========================= */
+/*    LOGIN */
 if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -210,14 +204,12 @@ if (loginForm) {
         localStorage.setItem("eduflowCurrentUser", matchedUser.name);
         localStorage.setItem("eduflowCurrentUserEmail", matchedUser.email);
 
-        alert("Login successful!");
+        // alert("Login successful!");
         window.location.href = "dashboard.html";
     });
 }
 
-/* =========================
-   PASSWORD TOGGLE
-========================= */
+/*    PASSWORD TOGGLE */
 if (toggleLoginPassword && loginPassword) {
     toggleLoginPassword.addEventListener("click", function () {
         const isPassword = loginPassword.type === "password";
