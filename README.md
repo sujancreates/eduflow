@@ -36,4 +36,4 @@ A scalable productivity platform designed to improve academic workflow managemen
 
 ## License
 
-Add your license here
+© 2026 Sujan Creates. All rights reserved.
