@@ -1,37 +1,39 @@
-A scalable productivity platform I designed to improve academic workflow management.
+# EduFlow - Lecturer Workload Management Dashboard
 
-## EduFlow - Lecturer Workload Management Dashboard
+A scalable productivity platform designed to improve academic workflow management for lecturers managing multiple modules and institutions.
 
-EduFlow is a web-based dashboard that I developed to help lecturers efficiently manage their workload across multiple modules and institutions. My goal was to create an intuitive system that simplifies task tracking, scheduling, and overall productivity.
+## Features
 
-### What I built
-- A dynamic dashboard displaying real-time task statistics
-- Full task management system (create, read, update, delete)
-- Search and filtering by priority and status
-- Task scheduling and organization features
-- Data persistence using LocalStorage
-- A modern UI with glassmorphism design
-- Light/Dark mode toggle
-- Loign/Signup interface design
-- Fully responsive layout for all devices
+- **Dynamic Dashboard** – Real-time task statistics and visual overview
+- **Full Task Management** – Create, read, update, and delete tasks
+- **Smart Filtering** – Search and organize by priority, status, and category
+- **Task Scheduling** – Plan and organize workload effectively
+- **Persistent Storage** – Data saved locally via LocalStorage
+- **Modern UI** – Glassmorphism design with light/dark mode toggle
+- **Responsive Design** – Works seamlessly across all devices
 
-  ### Technologies I used
-  - HTML5
-  - CSS3 (flexbox, grid, custom properties)
-  - JavaScript (Vanilla JS)
-  - LocalStorage API
-  - Font Awesome
- 
-    ### Why I built this?
-    I developed this as a part of my client-side development coursework. I wanted to solve a real-world problem helping lecturers manage complex workloads more efficiently-while aslo strengthening my frontend development and UI/UX design skills.
+## Tech Stack
 
-    ### What I plan next?
-    - Integrate a backend (firebase or node.js)
-    - Implement reall authenticationn and user accounts
-    - ADD multi-user and role based access
-    - Introduce AI-based task prioritization
-    - Build notification and reminder systems
-    - Enable cloud sync across devices
-   
-    ### About me
-    I'm Sujan Karki, a Computer Science student passionate about building modern web applications and exploring cybersecurity and software development.
+- **Frontend:** HTML5, CSS3 (Flexbox, Grid, Custom Properties)
+- **Scripting:** Vanilla JavaScript
+- **Storage:** LocalStorage API
+- **Icons:** Font Awesome
+
+## Getting Started
+
+1. Clone the repository
+2. Open `index.html` in your browser
+3. Start creating and managing your tasks
+
+## Future Enhancements
+
+- Backend integration (Firebase or Node.js)
+- Authentication system and user accounts
+- Multi-user support with role-based access control
+- AI-powered task prioritization
+- Notification and reminder systems
+- Cloud synchronization across devices
+
+## License
+
+Add your license here
