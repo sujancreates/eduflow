@@ -19,12 +19,6 @@ A scalable productivity platform designed to improve academic workflow managemen
 - **Storage:** LocalStorage API
 - **Icons:** Font Awesome
 
-## Getting Started
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Start creating and managing your tasks
-
 ## Future Enhancements
 
 - Backend integration (Firebase or Node.js)
